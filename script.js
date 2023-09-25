@@ -55,7 +55,7 @@ function calcularVelocidad(){
 function calcularFuerza() {
     const altura = parseFloat(document.getElementById("altura").value);
     const presion = densidadAgua * gravedad * altura;
-    const area = areaDeImpacto; /* Calcular área de impacto */;
+    const area = areaDeImpacto; 
     const fuerza = (presion * area);
     this.fuerza = fuerza;
     const resultadoElement = document.getElementById("resultadoFuerza");
