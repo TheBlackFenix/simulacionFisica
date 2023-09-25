@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Generador Hidráulico</title>
+</head>
+<body class="bg-body col-12 row">
+    <div class="card col-6">
+        <div class="card-header bg-dark text-white">
+            <h1>Simulador de Generador Hidráulico</h1>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="form-group col-6">
+                    <label class="form-label">Gravedad</label>
+                    <input type="text" class="form-control " disabled value="9.81 m/s²">
+                </div>
+                <div class="form-group col-6">
+                    <label class="form-label">Densidad del Agua</label>
+                    <input type="text" class="form-control " disabled value="1000 kg/m³">
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-6">
+                    <label for="altura" class="form-label ">Altura de caída (metros):</label>
+                    <input type="number" id="altura" value="10" class="form-control" onkeyup=""><br>
+                </div>
+                <div class="form-group col-6">
+                    <label for="caudal" class="form-label ">Caudal (m³/s):</label>
+                    <input type="number" id="caudal" value="10" class="form-control" onkeyup="calcular()" ><br>
+                </div>
+            </div>
+            <div class="card-footer ">
+                <div class="row">
+                    <div class="col-6">
+                        <h3>Masa del Agua:</h3>
+                        <div id="resultadoMasa">
+                            Masa de agua: 0 kg
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <h3>Energia Potencial:</h3>
+                        <div id="resultadoEnergiaPotencial">
+                            Energia Potencial: 0 J
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <h3>Velocidad:</h3>
+                        <div id="resultadoVelocidad">
+                            Velocudad: 0 m/s
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <h3>Energia Cínetica:</h3>
+                        <div id="resultadoEnergiaCinetica">
+                            Energía cinética:: 0 J
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <h3>Potencia Generada:</h3>
+                        <div id="resultadoPotencia">
+                            Potencia generada: 0 kW
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <h3>Fuerza sobre la paleta:</h3>
+                        <div id="resultadoFuerza">
+                            Fuerza sobre la paleta: 0 N
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        
+    <div id="generador" class="card col-6">
+        <div id="agua" style="background-color: aqua; width: 100px; height: 100%;"></div>
+        <div style=" position: absolute;
+        top: 75%;
+        left: 38%;
+        width: 200px;
+        height: 200px;
+        transform-origin: center;
+        background-color: brown;
+        border-radius: 50%;"></div>
+        <div id="aspas" style="background-color: burlywood; height: 50px;"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
